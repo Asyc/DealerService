@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>me.asyc</groupId>
+   <artifactId>DealerService</artifactId>
+   <version>1.0</version>
+   <packaging>war</packaging>
+
+   <properties>
+      <version.thorntail>2.6.0.Final</version.thorntail>
+
+      <maven.compiler.source>1.8</maven.compiler.source>
+      <maven.compiler.target>1.8</maven.compiler.target>
+
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+      <failOnMissingWebXml>false</failOnMissingWebXml>
+   </properties>
+
+   <dependencyManagement>
+      <dependencies>
+         <dependency>
+            <groupId>io.thorntail</groupId>
+            <artifactId>bom</artifactId>
+            <version>${version.thorntail}</version>
+            <scope>import</scope>
+            <type>pom</type>
+         </dependency>
+      </dependencies>
+   </dependencyManagement>
+
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>io.thorntail</groupId>
+            <artifactId>thorntail-maven-plugin</artifactId>
+            <version>${version.thorntail}</version>
+            <executions>
+               <execution>
+                  <goals>
+                     <goal>package</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+      </plugins>
+   </build>
+
+   <dependencies>
+      <dependency>
+         <groupId>io.thorntail</groupId>
+         <artifactId>jaxrs</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>io.thorntail</groupId>
+         <artifactId>cdi</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>javax</groupId>
+         <artifactId>javaee-api</artifactId>
+         <version>8.0</version>
+         <scope>provided</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.jboss.resteasy</groupId>
+         <artifactId>resteasy-jaxb-provider</artifactId>
+         <version>3.0.16.Final</version>
+      </dependency>
+   </dependencies>
+
+</project>

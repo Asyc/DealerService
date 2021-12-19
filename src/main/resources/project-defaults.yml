@@ -1,0 +1,16 @@
+thorntail:
+  logging:
+    pattern-formatters:
+      LOG_FORMATTER:
+        pattern: "%p [%c] %s%e%n"
+    periodic-rotating-file-handlers:
+      FILE:
+        file:
+          path: log/thorntail.log
+        suffix: .yyyy-MM-dd
+        named-formatter: LOG_FORMATTER
+        level: INFO
+    root-logger:
+      handlers:
+        - CONSOLE
+        - FILE
